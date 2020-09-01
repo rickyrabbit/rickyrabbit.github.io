@@ -1,0 +1,224 @@
+:root{
+    /* background-image: linear-gradient(to bottom right, rgba(0, 115, 255, 0.081), rgb(239, 241, 255)); */
+    background-image: linear-gradient(to bottom right, rgb(0, 16, 110),  rgb(33, 78, 155));
+    --primary-text-color: rgb(255, 255, 255);
+    --secondary-text-color: rgb(255, 129, 129);
+    font-family: 'Lato', sans-serif;
+    --primary-navbar-text-color: rgb(97, 76, 253);
+    --secondary-navbar-text-color: rgb(255, 255, 255);
+    
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+.container {
+    border-radius: 5px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navtext{
+    margin: 5px 0 5px 0;
+    font-weight: 900;
+    color: var(--primary-text-color);
+    align-self: center;
+}
+
+#nameTitle{
+    font-size: 30px;
+}
+#descTitle{
+    font-size: medium;
+}
+
+#navbar{
+    grid-area: navcont;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-areas: 
+    "navbartitle       navbarlinks";
+    grid-gap: 1rem;
+    min-height: 40px;
+    /* background-color: rgb(0, 13, 96); */
+    background-color: rgba(33, 78, 155, 0.224);
+    border-radius: 10px;
+    margin: 15px;
+    height: 110px;
+}
+
+#navbar p{
+    color: var(--primary-text-color);
+}
+
+#navbar-links{
+    grid-area: navbarlinks;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar-links li:last-child a p{
+    padding: 10px 10px;
+    /* display: block; */
+}
+
+.navbar-item a{
+    margin: 10px 20px;
+    padding: 10px 50px;
+    /* background-color: #ffffff15; */
+    border-radius: 60px;
+    color: var(--primary-text-color);
+    transition: all 0.5s ease;
+    
+
+}
+
+
+/* .navbar-item a p{
+    display: none;
+} */
+
+.navbar-item a img{
+    width: 60px;
+    margin: 0px 10px;
+}
+
+.navbar-item a p{
+    transition: all 0.5s ease;
+}
+
+.navbar-item a:hover{
+    background-color: rgba(255, 255, 255, 0.374);
+}
+
+.navbar-item a:hover img{
+    transform: scale(1.15);
+}
+
+.navbar-item a:hover p{
+    /* animation: navbarTextappear 1s infinite; */
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+#navbar-title{
+    grid-area: navbartitle;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+#navbar-title a p{
+    color: var(--primary-text-color);
+}
+
+
+.shadow {
+    -webkit-box-shadow: 5px 5px 6px 4px hsla(0, 0%, 85%, 0.15);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    5px 5px 6px 4px hsla(0, 0%, 85%, 0.15);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         5px 5px 6px 4px hsla(0, 0%, 85%, 0.15);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.navbar-shadow{
+    -webkit-box-shadow: 0px 0px 15px 1px  hsla(0, 0%, 100%, 0.25);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0px 0px 15px 1px  hsla(0, 0%, 100%, 0.25);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         0px 0px 15px 1px  hsla(0, 0%, 100%, 0.25);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+#myphoto{
+    grid-area: myphoto;
+}
+
+.photo-container{
+    flex-direction: column;
+}
+
+#contacts{
+    grid-area: cts;
+    flex-direction: column;
+}
+
+#briefintro{
+    grid-area: bintro;    
+    font-weight: 400;
+    flex-direction: column;
+}
+
+
+p,h1,h2,h3,h4,h5,h6{
+    color: var(--primary-text-color);
+    margin:0;
+}
+
+#mycv{
+    grid-area: mycv;
+    flex-direction: column;
+}
+
+#myinterests{
+    grid-area: myint;
+    flex-direction: column;
+}
+
+#curiosity{    
+    grid-area: cur;
+    flex-direction: column;
+}
+
+#contacts a img {
+    object-fit: contain;
+    color: #ffffff15;
+    width: 60px;
+    margin: 15px 15px;    /* filter: grayscale(100%) brightness(100%) saturate(300%) invert(100%); */
+}
+
+
+#faceimg {
+    border-radius: 50%;
+    min-width: 50px;
+    max-width: 200px;
+    flex-basis: auto;
+    margin: 5px 5px 50px 5px;
+    transition: all 0.2s ease;
+
+}
+
+#faceimg:hover{
+    transform: scale(1.1);
+}
+
+
+.grid-template{
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: auto auto 2fr 2fr 1fr 1fr;
+    grid-template-areas: 
+    "navcont   navcont"
+    "myphoto   bintro"
+    "cts       mycv"
+    "myint     mycv"
+    "myint     cur"
+    "myint     cur";
+    grid-gap: 1rem;
+    
+}
+
+a, u {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
