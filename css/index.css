@@ -1,8 +1,18 @@
 :root{
-    /* background-image: linear-gradient(to bottom right, rgba(0, 115, 255, 0.081), rgb(239, 241, 255)); */
-    background-image: linear-gradient(to bottom right, rgb(0, 16, 110),  rgb(33, 78, 155));
-    --primary-text-color: rgb(255, 255, 255);
-    --secondary-text-color: rgb(255, 129, 129);
+    /* background-image: url("/assets/background.svg"); */
+    background-repeat: no-repeat;
+    /* background-color: rgb(135, 232, 213); */
+    background-image: linear-gradient(to bottom, rgb(0, 16, 110),  rgb(33, 78, 155));
+    background-color: rgb(33, 78, 155);
+    --p1-prime-text-color: rgb(255, 250, 237);
+    --p1-second-text-color: rgb(223, 223, 223);
+    --p1-third-text-color:  rgb(255, 127, 68);
+   
+    
+    --primary-text-color: var(--p1-prime-text-color);
+    --secondary-text-color: var(--p1-second-text-color);
+    --third-text-color: var(--p1-third-text-color);
+
     font-family: 'Lato', sans-serif;
     --primary-navbar-text-color: rgb(97, 76, 253);
     --secondary-navbar-text-color: rgb(255, 255, 255);
@@ -13,6 +23,10 @@ body::-webkit-scrollbar {
     width: 5px;
 }
 
+/* body {
+    background: url("/assets/background.svg");
+} */
+
 body::-webkit-scrollbar-track {
   background: #1e1e24;
 }
@@ -21,12 +35,14 @@ body::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
+
 .container {
     border-radius: 5px;
 }
 
 .flex-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -39,10 +55,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 #nameTitle{
-    font-size: 30px;
+    font-size: 3vmin;
 }
 #descTitle{
-    font-size: medium;
+    font-size: 2vmin;
 }
 
 #navbar{
@@ -51,17 +67,14 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 2fr 5fr;
     grid-template-areas: 
     "navbartitle       navbarlinks";
-    grid-gap: 1rem;
     min-height: 40px;
-    /* background-color: rgb(0, 13, 96); */
-    background-color: rgba(33, 78, 155, 0.224);
+    background-color: linear-gradient(to bottom right, var(--p1-prime-text-color),  var(--p1-second-text-color));
     border-radius: 10px;
     margin: 15px;
-    height: 110px;
 }
 
 #navbar p{
-    color: var(--primary-text-color);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 #navbar-links{
@@ -71,29 +84,17 @@ body::-webkit-scrollbar-thumb {
     margin: 0;
 }
 
-#navbar-links li:last-child a p{
-    padding: 10px 10px;
-    /* display: block; */
-}
 
 .navbar-item a{
-    margin: 10px 20px;
-    padding: 10px 50px;
-    /* background-color: #ffffff15; */
+    margin: 10px 10px;
+    padding: 10px 10px;
     border-radius: 60px;
     color: var(--primary-text-color);
     transition: all 0.5s ease;
-    
-
 }
 
-
-/* .navbar-item a p{
-    display: none;
-} */
-
 .navbar-item a img{
-    width: 60px;
+    width: 4vmin;
     margin: 0px 10px;
 }
 
@@ -110,7 +111,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar-item a:hover p{
-    /* animation: navbarTextappear 1s infinite; */
     display: block;
     font-weight: 600;
     font-size: 20px;
@@ -120,11 +120,12 @@ body::-webkit-scrollbar-thumb {
 #navbar-title{
     grid-area: navbartitle;
     flex-direction: column;
-    margin-right: 20px;
+    margin: 0px 5px;
 }
 
-#navbar-title a p{
-    color: var(--primary-text-color);
+#navbar-title div p{
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
 }
 
 
@@ -159,6 +160,22 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
 }
 
+#briefintro p {
+    text-align: center
+}
+
+#briefintro h2 {
+    font-size: 2vmin
+}
+
+#briefintro h1 {
+    font-size: 3vmin
+}
+
+figcaption p {
+    margin-top: 2vmin;
+    text-align: center;
+}
 
 p,h1,h2,h3,h4,h5,h6{
     color: var(--primary-text-color);
@@ -182,18 +199,27 @@ p,h1,h2,h3,h4,h5,h6{
 
 #contacts a img {
     object-fit: contain;
-    color: #ffffff15;
-    width: 60px;
-    margin: 15px 15px;    /* filter: grayscale(100%) brightness(100%) saturate(300%) invert(100%); */
+    color: var(--p1-second-text-color);
+    width: 5vmin;
+    max-width: 8vmin;
+    margin: 15px 15px;
+}
+
+#contacts h2 {
+    font-size: 4vmin;
+}
+
+#navbar-links li a p {
+    font-size: 3vmin;
 }
 
 
 #faceimg {
     border-radius: 50%;
-    min-width: 50px;
-    max-width: 200px;
+    min-width: 2vmin;
+    max-width: 24vmin;
     flex-basis: auto;
-    margin: 5px 5px 50px 5px;
+    margin: 5px;
     transition: all 0.2s ease;
 
 }
@@ -218,7 +244,25 @@ p,h1,h2,h3,h4,h5,h6{
     
 }
 
+@media (max-width: 900px) {
+    .grid-template{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 2fr 2fr 1fr 1fr;
+        grid-template-areas: 
+        "navcont"
+        "myphoto"
+        "bintro"
+        "cts"
+        "mycv"
+        "cur"
+        "myint";
+        grid-gap: 1rem;
+        
+    }
+  }
+
 a, u {
     text-decoration: none;
-    color: var(--secondary-text-color);
+    color: var(--third-text-color);
 }
